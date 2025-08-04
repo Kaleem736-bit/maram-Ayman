@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع مرام أيمن الإخباري - الأخبار العربية والعالمية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #c00000;
+            --accent-color: #f6ad55;
+            --light-color: #f7fafc;
+            --dark-color: #222;
+            --gray-color: #777;
+            --border-color: #e0e0e0;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: var(--dark-color);
+            line-height: 1.8;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #0d1e3a);
+            color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .top-bar {
+            background-color: var(--secondary-color);
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+        
+        .top-bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        
+        .date-time {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .top-social a {
+            margin-left: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .top-social a:hover {
+            color: var(--accent-color);
+        }
+        
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-color), #e67e22);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .site-title {
+            text-align: center;
+        }
+        
+        .site-title h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
+        
+        .site-title p {
+            font-size: 1rem;
+            color: #ddd;
+            font-weight: 300;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .search-bar {
+            position: relative;
+            width: 300px;
+        }
+        
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .search-bar input:focus {
+            background-color: rgba(255, 255, 255, 0.25);
+            outline: none;
+        }
+        
+        .search-bar input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .search-bar button {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .user-actions a {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .user-actions a:hover {
+            background-color: var(--accent-color);
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--dark-color);
+            padding: 0 5%;
+        }
+        
+        .main-nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .main-nav {
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+        }
+        
+        .main-nav li {
+            position: relative;
+        }
+        
+        .main-nav > li > a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            display: block;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+        }
+        
+        .main-nav > li > a:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .main-nav > li > a.active {
+            background-color: var(--secondary-color);
+        }
+        
+        /* Breaking News */
+        .breaking-news {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px 0;
+            overflow: hidden;
+        }
+        
+        .breaking-news-content {
+            display: flex;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        
+        .breaking-news-label {
+            background-color: #fff;
+            color: var(--secondary-color);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-left: 15px;
+            white-space: nowrap;
+            font-size: 1.1rem;
+        }
+        
+        .breaking-news-text {
+            white-space: nowrap;
+            animation: marquee 25s linear infinite;
+            padding-left: 100%;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 30px;
+        }
+        
+        /* Featured News */
+        .featured-news {
+            margin-bottom: 50px;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+        
+        .section-title i {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+        }
+        
+        .view-all {
+            color: var(--secondary-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .featured-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .featured-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .featured-card.large {
+            grid-column: span 3;
+            display: flex;
+        }
+        
+        .featured-card.large .image-container {
+            flex: 0 0 60%;
+        }
+        
+        .featured-card.large .content {
+            flex: 0 0 40%;
+        }
+        
+        .image-container {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+        
+        .featured-card:not(.large) .image-container {
+            height: 200px;
+        }
+        
+        .featured-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .featured-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .category-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .featured-card .content {
+            padding: 25px;
+        }
+        
+        .featured-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        
+        .featured-card.large h3 {
+            font-size: 1.8rem;
+        }
+        
+        .featured-card p {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        
+        .featured-card .meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray-color);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+        }
+        
+        .meta-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .meta-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .reporter {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .reporter img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        /* News Sections */
+        .news-section {
+            margin-bottom: 50px;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .news-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .news-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .news-card .content {
+            padding: 20px;
+        }
+        
+        .news-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--dark-color);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        
+        .news-card .meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        /* Live Broadcast */
+        .live-broadcast {
+            background: linear-gradient(135deg, var(--primary-color), #0d1e3a);
+            color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .live-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: var(--secondary-color);
+        }
+        
+        .live-tag {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #ff0000;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        .live-content {
+            display: flex;
+            padding: 20px;
+            gap: 30px;
+        }
+        
+        .live-video {
+            flex: 0 0 60%;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .live-video img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+        
+        .live-overlay {
+            position: absolute;
+            text-align: center;
+        }
+        
+        .play-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .play-icon:hover {
+            transform: scale(1.1);
+            background-color: rgba(255, 0, 0, 0.9);
+        }
+        
+        .live-info {
+            flex: 0 0 35%;
+        }
+        
+        .live-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .live-info p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: #ddd;
+        }
+        
+        .live-schedule {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .schedule-item {
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+        }
+        
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+        
+        .schedule-time {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 170px;
+            height: fit-content;
+        }
+        
+        .sidebar-widget {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .widget-title {
+            position: relative;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .widget-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .popular-news {
+            list-style: none;
+        }
+        
+        .popular-news li {
+            padding: 15px 0;
+            border-bottom: 1px dashed var(--border-color);
+            display: flex;
+            gap: 15px;
+        }
+        
+        .popular-news li:last-child {
+            border-bottom: none;
+        }
+        
+        .popular-news .number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+        
+        .popular-news .number.top {
+            background-color: var(--secondary-color);
+        }
+        
+        .popular-news .content h4 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        
+        .popular-news .meta {
+            color: var(--gray-color);
+            font-size: 0.85rem;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .maram-section {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(135deg, var(--primary-color), #0d1e3a);
+            border-radius: 10px;
+            color: white;
+        }
+        
+        .maram-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+        }
+        
+        .maram-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .maram-section h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+        
+        .maram-section p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        .categories {
+            list-style: none;
+        }
+        
+        .categories li {
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        
+        .categories li:last-child {
+            border-bottom: none;
+        }
+        
+        .categories a {
+            color: var(--dark-color);
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .categories a:hover {
+            color: var(--secondary-color);
+            padding-right: 10px;
+        }
+        
+        .categories .count {
+            background-color: var(--border-color);
+            padding: 2px 10px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+        
+        .ad-banner {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-color);
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+            border: 2px dashed var(--border-color);
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary-color), #0d1e3a);
+            color: white;
+            padding: 50px 5%;
+            border-radius: 10px;
+            text-align: center;
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+        }
+        
+        .newsletter h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .newsletter p {
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 16px 25px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 1.1rem;
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px var(--accent-color);
+        }
+        
+        .newsletter-form button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0 35px;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #e67e22;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding-top: 60px;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+        
+        .footer-widget h3 {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+        }
+        
+        .footer-widget h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-widget ul {
+            list-style: none;
+        }
+        
+        .footer-widget ul li {
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-widget ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .footer-widget ul li a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .footer-widget ul li a:hover {
+            color: var(--accent-color);
+            padding-right: 10px;
+        }
+        
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contact-info i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            width: 25px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding: 25px 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a0aec0;
+            font-size: 0.95rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .featured-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .featured-card.large {
+                grid-column: span 2;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+            
+            .live-content {
+                flex-direction: column;
+            }
+            
+            .live-video, .live-info {
+                flex: 0 0 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .top-bar-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .main-header {
+                flex-direction: column;
+                gap: 25px;
+            }
+            
+            .search-bar {
+                width: 100%;
+            }
+            
+            .main-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .main-nav li {
+                margin: 5px;
+            }
+            
+            .breaking-news-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .breaking-news-label {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+            
+            .breaking-news-text {
+                white-space: normal;
+                animation: none;
+                padding-left: 0;
+            }
+            
+            .featured-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .featured-card.large {
+                grid-column: span 1;
+                flex-direction: column;
+            }
+            
+            .featured-card.large .image-container {
+                height: 250px;
+            }
+            
+            .news-grid, .videos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="top-bar">
+            <div class="top-bar-container">
+                <div class="date-time">
+                    <span><i class="far fa-calendar-alt"></i> الإثنين ٤ أغسطس ٢٠٢٥</span>
+                    <span><i class="far fa-clock"></i> ١١:٣٥ صباحًا</span>
+                </div>
+                <div class="top-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="logo-container">
+                <div class="logo">
+                    <i class="fas fa-microphone-alt"></i>
+                </div>
+                <div class="site-title">
+                    <h1>مرام أيمن</h1>
+                    <p>موقع إخباري متكامل - شاهد العالم بعيون العرب</p>
+                </div>
+            </div>
+            
+            <div class="header-actions">
+                <div class="search-bar">
+                    <input type="text" placeholder="ابحث عن أخبار، مقالات، تقارير...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="user-actions">
+                    <a href="#"><i class="fas fa-user"></i> تسجيل الدخول</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="main-nav-container">
+            <ul class="main-nav">
+                <li><a href="#" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li><a href="#">أخبار عربية</a></li>
+                <li><a href="#">أخبار عالمية</a></li>
+                <li><a href="#">الرياضة</a></li>
+                <li><a href="#">الاقتصاد</a></li>
+                <li><a href="#">السياسة</a></li>
+                <li><a href="#">الثقافة والفنون</a></li>
+                <li><a href="#">التكنولوجيا</a></li>
+                <li><a href="#">الصحة</a></li>
+                <li><a href="#">فيديو وتقارير</a></li>
+                <li><a href="#">الرأي والتحليلات</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Breaking News -->
+    <div class="breaking-news">
+        <div class="breaking-news-content">
+            <div class="breaking-news-label">خبر عاجل</div>
+            <div class="breaking-news-text">اجتماع طارئ لمجلس الوزراء لمناقشة مستجدات الأوضاع الاقتصادية - وزير المالية يعلن عن حزمة إجراءات جديدة لدعم الفئات الأكثر احتياجًا</div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <main>
+            <!-- Featured News -->
+            <section class="featured-news">
+                <div class="section-header">
+                    <div class="section-title">
+                        <i class="fas fa-fire"></i>
+                        <h2>الأخبار العاجلة</h2>
+                    </div>
+                    <a href="#" class="view-all">عرض الكل <i class="fas fa-arrow-left"></i></a>
+                </div>
+                <div class="featured-grid">
+                    <div class="featured-card large">
+                        <div class="image-container">
+                            <img src="https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?auto=format&fit=crop&w=1200&q=80" alt="Featured News">
+                            <div class="category-badge">الاقتصاد</div>
+                        </div>
+                        <div class="content">
+                            <h3>ارتفاع كبير في أسعار النفط العالمية يدفع الدول المنتجة لمراجعة سياساتها</h3>
+                            <p>أدت التطورات الجيوسياسية الأخيرة إلى ارتفاع حاد في أسعار النفط العالمية، مما دفع الدول المنتجة إلى مراجعة سياساتها الإنتاجية والتصديرية. محللون يتوقعون استمرار الارتفاع خلال الأشهر القادمة مع تداعيات كبيرة على الاقتصادات المستوردة.</p>
+                            <div class="meta">
+                                <div class="reporter">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Reporter">
+                                    <span>مراسل اقتصادي</span>
+                                </div>
+                                <div class="meta-info">
+                                    <span><i class="far fa-clock"></i> منذ 3 ساعات</span>
+                                    <span><i class="far fa-eye"></i> 2,450 مشاهدة</span>
+                                    <span><i class="far fa-comment"></i> 124 تعليق</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="featured-card">
+                        <div class="image-container">
+                            <img src="https://images.unsplash.com/photo-1580137189272-c9379f8864fd?auto=format&fit=crop&w=600&q=80" alt="News">
+                            <div class="category-badge">الرياضة</div>
+                        </div>
+                        <div class="content">
+                            <h3>الفريق الوطني يتأهل إلى نهائيات كأس العالم بعد فوز تاريخي</h3>
+                            <p>حقق الفريق الوطني لكرة القدم فوزًا تاريخيًا على نظيره في المباراة الحاسمة، ليتأهل إلى نهائيات كأس العالم لأول مرة في تاريخه وسط احتفالات جماهيرية واسعة.</p>
+                            <div class="meta">
+                                <div class="meta-info">
+                                    <span><i class="far fa-clock"></i> منذ 5 ساعات</span>
+                                    <span><i class="far fa-eye"></i> 5,780 مشاهدة</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="featured-card">
+                        <div class="image-container">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="News">
+                            <div class="category-badge">الآثار</div>
+                        </div>
+                        <div class="content">
+                            <h3>اكتشاف أثري جديد يعيد كتابة تاريخ المنطقة</h3>
+                            <p>أعلنت بعثة أثرية دولية عن اكتشاف مدينة أثرية كاملة تعود إلى أكثر من 5000 عام، مما قد يعيد كتابة تاريخ الحضارات في المنطقة.</p>
+                            <div class="meta">
+                                <div class="meta-info">
+                                    <span><i class="far fa-clock"></i> منذ 7 ساعات</span>
+                                    <span><i class="far fa-eye"></i> 3,210 مشاهدة</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Live Broadcast -->
+            <section class="live-broadcast">
+                <div class="live-header">
+                    <div class="live-tag">
+                        <i class="fas fa-circle"></i>
+                        <span>بث مباشر</span>
+                    </div>
+                    <h3>تغطية خاصة: القمة العربية الطارئة</h3>
+                </div>
+                <div class="live-content">
+                    <div class="live-video">
+                        <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1000&q=80" alt="Live Broadcast">
+                        <div class="live-overlay">
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <p>انقر للمشاهدة الآن</p>
+                        </div>
+                    </div>
+                    <div class="live-info">
+                        <h3>القمة العربية الطارئة: تحديات الأمن القومي العربي</h3>
+                        <p>بث مباشر من القاهرة حيث تعقد القمة العربية الطارئة لبحث المستجدات الإقليمية والدولية والتحديات التي تواجه الأمن القومي العربي. يشارك في القمة قادة 22 دولة عربية لمناقشة أبرز القضايا الملحة.</p>
+                        <div class="live-schedule">
+                            <div class="schedule-item">
+                                <span class="schedule-time">12:00 ظهرًا:</span> الجلسة الافتتاحية
+                            </div>
+                            <div class="schedule-item">
+                                <span class="schedule-time">1:30 ظهرًا:</span> كلمة الأمين العام لجامعة الدول العربية
+                            </div>
+                            <div class="schedule-item">
+                                <span class="schedule-time">3:00 عصرًا:</span> جلسات النقاش المغلقة
+                            </div>
+                            <div class="schedule-item">
+                                <span class="schedule-time">5:30 مساءً:</span> المؤتمر الصحفي الختامي
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Local News -->
+            <section class="news-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <i class="fas fa-city"></i>
+                        <h2>أخبار محلية</h2>
+                    </div>
+                    <a href="#" class="view-all">عرض الكل <i class="fas fa-arrow-left"></i></a>
+                </div>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=600&q=80" alt="Local News">
+                        <div class="content">
+                            <h3>افتتاح مشروع سكني جديد يضم 500 وحدة سكنية</h3>
+                            <div class="meta">
+                                <span><i class="far fa-clock"></i> منذ ساعة</span>
+                                <span><i class="far fa-eye"></i> 1,200</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&q=80" alt="Local News">
+                        <div class="content">
+                            <h3>وزير التعليم يعلن عن خطة تطوير شاملة للمنظومة التعليمية</h3>
+                            <div class="meta">
+                                <span><i class="far fa-clock"></i> منذ 3 ساعات</span>
+                                <span><i class="far fa-eye"></i> 980</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=600&q=80" alt="Local News">
+                        <div class="content">
+                            <h3>مستشفى جديد يفتح أبوابه لخدمة أهالي المنطقة الشرقية</h3>
+                            <div class="meta">
+                                <span><i class="far fa-clock"></i> منذ 4 ساعات</span>
+                                <span><i class="far fa-eye"></i> 1,540</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?auto=format&fit=crop&w=600&q=80" alt="Local News">
+                        <div class="content">
+                            <h3>انطلاق فعاليات مهرجان الربيع الثقافي بمشاركة فنانين عرب</h3>
+                            <div class="meta">
+                                <span><i class="far fa-clock"></i> منذ 6 ساعات</span>
+                                <span><i class="far fa-eye"></i> 2,100</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- International News -->
+            <section class="news-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <i class="fas fa-globe-asia"></i>
+                        <h2>أخبار عالمية</h2>
+                    </div>
+                    <a href="#" class="view-all">عرض الكل <i class="fas fa-arrow-left"></i></a>
+                </div>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1589320011590-0d1b1d1268a4?auto=format&fit=crop&w=600&q=80" alt="World News">
+                        <div class="content">
+                            <h3>قمة دولية تناقش أزمة المناخ وسبل مواجهة التحديات البيئية</h3>
+                            <div class="meta">
+                                <span><i class="far fa-clock"></i> منذ 2 ساعة</span>
+                                <span><i class="far fa-eye"></i> 890</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="World News">
+                        <div class="content">
+                            <h3>أسواق الأسهم العالمية تشهد ارتفاعًا قياسيًا بعد تحسن المؤشرات الاقتصادية</h3>
+                            <div class="meta">
+                                <span><i class="far fa-clock"></i> منذ 5 ساعات</span>
+                                <span><i class="far fa-eye"></i> 1,230</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=600&q=80" alt="World News">
+                        <div class="content">
+                            <h3>مهرجان سينمائي دولي يختتم فعالياته بتتويج أفلام عربية</h3>
+                            <div class="meta">
+                                <span><i class="far fa-clock"></i> منذ 8 ساعات</span>
+                                <span><i class="far fa-eye"></i> 2,100</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="World News">
+                        <div class="content">
+                            <h3>تقرير أممي: تحسن ملحوظ في مؤشرات التنمية البشرية عالميًا</h3>
+                            <div class="meta">
+                                <span><i class="far fa-clock"></i> منذ 10 ساعات</span>
+                                <span><i class="far fa-eye"></i> 1,780</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Newsletter -->
+            <section class="newsletter">
+                <h2>اشترك في النشرة البريدية</h2>
+                <p>احصل على آخر الأخبار والتحديثات مباشرة في بريدك الإلكتروني. اشترك الآن لتصلك أهم التقارير والتحليلات الإخبارية يوميًا.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="بريدك الإلكتروني">
+                    <button type="submit">اشترك الآن</button>
+                </form>
+            </section>
+        </main>
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <h3 class="widget-title">الأكثر قراءة</h3>
+                <ul class="popular-news">
+                    <li>
+                        <div class="number top">1</div>
+                        <div class="content">
+                            <h4>كشف تفاصيل جديدة حول حادث الانهيار الأرضي في المنطقة الشمالية</h4>
+                            <div class="meta">
+                                <span><i class="far fa-clock"></i> منذ 4 ساعات</span>
+                                <span><i class="far fa-eye"></i> 8,450</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="number top">2</div>
+                        <div class="content">
+                            <h4>تقرير خاص: مستقبل الطاقة المتجددة في المنطقة</h4>
+                            <div class="meta">
+                                <span><i class="far fa-clock"></i> منذ 6 ساعات</span>
+                                <span><i class="far fa-eye"></i> 7,210</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="number">3</div>
+                        <div class="content">
+                            <h4>خبير اقتصادي يتوقع تحسنًا في أسعار صرف العملات المحلية</h4>
+                            <div class="meta">
+                                <span><i class="far fa-clock"></i> منذ 8 ساعات</span>
+                                <span><i class="far fa-eye"></i> 6,780</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="number">4</div>
+                        <div class="content">
+                            <h4>اكتشاف أثرى جديد يعيد كتابة تاريخ المنطقة</h4>
+                            <div class="meta">
+                                <span><i class="far fa-clock"></i> منذ 10 ساعات</span>
+                                <span><i class="far fa-eye"></i> 6,320</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="number">5</div>
+                        <div class="content">
+                            <h4>استعدادات مكثفة لاستضافة المؤتمر الدولي للتقنية</h4>
+                            <div class="meta">
+                                <span><i class="far fa-clock"></i> منذ 12 ساعة</span>
+                                <span><i class="far fa-eye"></i> 5,980</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="maram-section">
+                <div class="maram-photo">
+                    <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0e1607d?auto=format&fit=crop&w=400&q=80" alt="مرام أيمن">
+                </div>
+                <h3>مرام أيمن</h3>
+                <p>إعلامية عربية بارزة، حاصلة على عدة جوائز في الصحافة الاستقصائية. تقدم برنامج "بصراحة" الأسبوعي الذي يناقش أهم القضايا السياسية والاجتماعية.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="sidebar-widget">
+                <h3 class="widget-title">الأقسام</h3>
+                <ul class="categories">
+                    <li><a href="#">أخبار محلية <span class="count">128</span></a></li>
+                    <li><a href="#">أخبار عربية <span class="count">76</span></a></li>
+                    <li><a href="#">أخبار عالمية <span class="count">94</span></a></li>
+                    <li><a href="#">الرياضة <span class="count">210</span></a></li>
+                    <li><a href="#">الاقتصاد <span class="count">145</span></a></li>
+                    <li><a href="#">الثقافة والفنون <span class="count">88</span></a></li>
+                    <li><a href="#">التكنولوجيا <span class="count">102</span></a></li>
+                    <li><a href="#">الصحة <span class="count">67</span></a></li>
+                    <li><a href="#">الرأي والتحليلات <span class="count">53</span></a></li>
+                </ul>
+            </div>
+            
+            <div class="ad-banner">
+                <i class="fas fa-ad" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                <p>مساحة إعلانية</p>
+                <p>970x300px</p>
+            </div>
+        </aside>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-widget">
+                <h3>عن الموقع</h3>
+                <ul>
+                    <li><a href="#">من نحن</a></li>
+                    <li><a href="#">رسالة التحرير</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">اتفاقية الاستخدام</a></li>
+                    <li><a href="#">الإعلان في الموقع</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-widget">
+                <h3>الأقسام</h3>
+                <ul>
+                    <li><a href="#">أخبار محلية</a></li>
+                    <li><a href="#">أخبار عربية</a></li>
+                    <li><a href="#">أخبار عالمية</a></li>
+                    <li><a href="#">الرياضة</a></li>
+                    <li><a href="#">الاقتصاد</a></li>
+                    <li><a href="#">الثقافة والفنون</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-widget">
+                <h3>خدماتنا</h3>
+                <ul>
+                    <li><a href="#">النشرة البريدية</a></li>
+                    <li><a href="#">تطبيق الجوال</a></li>
+                    <li><a href="#">خدمة RSS</a></li>
+                    <li><a href="#">أرشيف الأخبار</a></li>
+                    <li><a href="#">البث المباشر</a></li>
+                    <li><a href="#">مركز المعلومات</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-widget">
+                <h3>اتصل بنا</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i>عمان الاردن</li>
+                    <li><i class="fas fa-phone"></i> </li>
+                    <li><i class="fas fa-envelope"></i> info@maramayman.com</li>
+                    <li><i class="fas fa-fax"></i> </li>
+                </ul>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>جميع الحقوق محفوظة © 2025 موقع مرام أيمن الإخباري. يمنع إعادة نشر المواد إلا بعد الحصول على إذن خطي من إدارة الموقع.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // JavaScript for News Ticker and Interactive Elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update Date and Time
+            function updateDateTime() {
+                const now = new Date();
+                const options = { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                };
+                
+                const dateStr = now.toLocaleDateString('ar-EG', options);
+                let hours = now.getHours();
+                const minutes = now.getMinutes().toString().padStart(2, '0');
+                const ampm = hours >= 12 ? 'مساءً' : 'صباحًا';
+                hours = hours % 12 || 12;
+                
+                const timeStr = `${hours}:${minutes} ${ampm}`;
+                
+                document.querySelector('.date-time span:first-child').innerHTML = 
+                    `<i class="far fa-calendar-alt"></i> ${dateStr}`;
+                
+                document.querySelector('.date-time span:last-child').innerHTML = 
+                    `<i class="far fa-clock"></i> ${timeStr}`;
+            }
+            
+            updateDateTime();
+            setInterval(updateDateTime, 60000);
+            
+            // Breaking News Animation
+            const breakingNewsText = document.querySelector('.breaking-news-text');
+            breakingNewsText.innerHTML += ' | ' + breakingNewsText.innerHTML;
+            
+            // Video Play Functionality
+            const playIcons = document.querySelectorAll('.play-icon');
+            playIcons.forEach(icon => {
+                icon.addEventListener('click', function() {
+                    const videoCard = this.closest('.live-video');
+                    const title = document.querySelector('.live-info h3').textContent;
+                    alert(`سيتم تشغيل البث المباشر: ${title}`);
+                });
+            });
+            
+            // Newsletter Form Submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input').value;
+                if (email && email.includes('@')) {
+                    alert(`شكرًا على اشتراكك! سيتم إرسال النشرة إلى ${email}`);
+                    this.reset();
+                } else {
+                    alert('يرجى إدخال بريد إلكتروني صحيح');
+                }
+            });
+            
+            // Simulate Live Broadcast Pulse Animation
+            setInterval(() => {
+                const liveTag = document.querySelector('.live-tag');
+                liveTag.style.animation = 'none';
+                setTimeout(() => {
+                    liveTag.style.animation = 'pulse 1.5s infinite';
+                }, 10);
+            }, 5000);
+            
+            // Featured News Hover Effect
+            const featuredCards = document.querySelectorAll('.featured-card');
+            featuredCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
